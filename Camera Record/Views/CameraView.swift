@@ -51,7 +51,7 @@ struct CameraView: View {
                             .padding()
                     }
                 }
-                if countdown > 0 {
+                if countdown > 0 && recorder.isRecording {
                     Spacer()
                     HStack {
                         Spacer()
@@ -101,28 +101,26 @@ struct CameraView: View {
     
     private func startCountdown(seconds: Int, onFinished: @escaping () -> Void) {
         countdown = seconds
-        if (countdown < 4) {
-            self.playBeepOk()
-        }
+        self.playBeepOk()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             self.countdown -= 1
             if self.countdown == 0 {
                 playBeepKo()
                 timer.invalidate()
                 onFinished()
-            } else if (countdown < 4) {
+            } else {
                 playBeepOk()
             }
         }
     }
     
     private func playBeepOk() {
-            AudioServicesPlaySystemSound(1052)
-        }
+        AudioServicesPlaySystemSound(1052)
+    }
     
     private func playBeepKo() {
-            AudioServicesPlaySystemSound(1054)
-        }
+        AudioServicesPlaySystemSound(1054)
+    }
 }
 
 class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, ObservableObject {
@@ -133,7 +131,7 @@ class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, ObservableObject
     
     override init() {
         super.init()
-        addAudioInput()
+        // addAudioInput()
         addVideoInput()
         if session.canAddOutput(movieOutput) {
           session.addOutput(movieOutput)
@@ -147,7 +145,8 @@ class Recorder: NSObject, AVCaptureFileOutputRecordingDelegate, ObservableObject
         guard let device = AVCaptureDevice.default(for: .audio) else { return }
         guard let input = try? AVCaptureDeviceInput(device: device) else { return }
         if session.canAddInput(input) {
-          session.addInput(input)
+            session.configuresApplicationAudioSessionToMixWithOthers = true
+            session.addInput(input)
         }
     }
     

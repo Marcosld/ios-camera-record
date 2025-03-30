@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1839B5622D9099540031C40D /* beep-ko.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1839B5602D9099540031C40D /* beep-ko.mp3 */; };
+		1839B5632D9099540031C40D /* beep-ok.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1839B5612D9099540031C40D /* beep-ok.mp3 */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		1839B4EC2D85C1690031C40D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +32,8 @@
 		1839B4DB2D85C1670031C40D /* Camera Record.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Camera Record.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1839B4EB2D85C1690031C40D /* Camera RecordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Camera RecordTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1839B4F52D85C1690031C40D /* Camera RecordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Camera RecordUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1839B5602D9099540031C40D /* beep-ko.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-ko.mp3"; sourceTree = "<group>"; };
+		1839B5612D9099540031C40D /* beep-ok.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-ok.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -79,6 +86,8 @@
 				1839B4EE2D85C1690031C40D /* Camera RecordTests */,
 				1839B4F82D85C1690031C40D /* Camera RecordUITests */,
 				1839B4DC2D85C1670031C40D /* Products */,
+				1839B5602D9099540031C40D /* beep-ko.mp3 */,
+				1839B5612D9099540031C40D /* beep-ok.mp3 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +221,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1839B5622D9099540031C40D /* beep-ko.mp3 in Resources */,
+				1839B5632D9099540031C40D /* beep-ok.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
